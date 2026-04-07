@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riju.Naskar — Launching Soon</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Riju.Naskar — Full Stack Developer. Premium systems, RAGE:MP engineering, and modern web experiences. Launching soon." />
+  <meta name="keywords" content="Riju Naskar, Full Stack Developer, RAGE MP, Web Developer, Portfolio" />
+  <meta name="author" content="Riju Naskar" />
+
+  <link rel="icon" href="/riju.ico" />
+
+  <style>
+    :root{
+      --bg:#060a18;
+      --bg2:#0c1330;
+      --accent:#7c9cff;
+      --accent2:#22d3ee;
+      --text:#eef2ff;
+      --muted:#9aa7d6;
+      --glass: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.12);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 80% -10%, #1a2a6c33, transparent 60%),
+                  radial-gradient(900px 500px at -10% 110%, #22d3ee22, transparent 60%),
+                  linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+
+    /* GRID */
+    .grid{
+      position:fixed;inset:0;opacity:.15;pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: radial-gradient(circle at 50% 50%, #000 30%, transparent 80%);
+    }
+
+    /* WRAP */
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    /* CARD */
+    .card{
+      position:relative;
+      width:100%;
+      max-width:900px;
+      padding:40px;
+      border-radius:22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      backdrop-filter: blur(18px);
+      border:1px solid var(--border);
+      box-shadow: 0 20px 80px rgba(0,0,0,.45);
+    }
+
+    .card::before{
+      content:"";position:absolute;inset:-2px;border-radius:24px;
+      background: linear-gradient(120deg, transparent, var(--accent), var(--accent2), transparent);
+      filter: blur(18px);opacity:.4;z-index:-1;
+    }
+
+    /* HEADER */
+    .header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      width:48px;height:48px;border-radius:14px;
+      background: linear-gradient(135deg, #7c9cff, #22d3ee);
+      display:grid;place-items:center;
+      box-shadow: 0 10px 40px rgba(124,156,255,.5);
+      flex-shrink:0;
+    }
+
+    .logo svg{width:24px;height:24px;fill:#0b1022}
+
+    .name{
+      font-size: clamp(28px, 5vw, 56px);
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .name .dot{color:var(--accent)}
+
+    .tag{
+      font-size:13px;
+      letter-spacing:.2em;
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    .divider{
+      height:1px;margin:25px 0;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* COMING */
+    .coming{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .coming h2{
+      font-size: clamp(16px, 3vw, 22px);
+      letter-spacing:.3em;
+      text-align:center;
+      color:#cbd5ff;
+    }
+
+    /* PROGRESS */
+    .progress{
+      width:100%;
+      height:8px;
+      border-radius:999px;
+      background: rgba(255,255,255,.08);
+      overflow:hidden;
+      border:1px solid var(--border);
+    }
+
+    .bar{
+      height:100%;
+      width:70%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      animation: load 4s ease-in-out infinite alternate;
+      box-shadow:0 0 20px rgba(124,156,255,.7);
+    }
+
+    @keyframes load{
+      from{width:45%}
+      to{width:90%}
+    }
+
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:15px;
+      font-size:12px;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    /* FLOATING SHAPES */
+    .shape{
+      position:absolute;
+      opacity:.3;
+      pointer-events:none;
+    }
+
+    .shape svg{width:120px;height:120px}
+
+    .s1{top:-30px;right:-20px;animation: spin 25s linear infinite}
+    .s2{bottom:-40px;left:-20px;animation: spin 30s linear reverse infinite}
+
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    footer{
+      text-align:center;
+      margin-top:25px;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* MOBILE OPTIMIZATION */
+    @media (max-width:600px){
+      .card{
+        padding:25px 18px;
+      }
+
+      .header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .name{
+        font-size:26px;
+      }
+
+      .coming h2{
+        letter-spacing:.2em;
+      }
+
+      .shape svg{
+        width:80px;height:80px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="grid"></div>
+
+  <div class="wrap">
+    <div class="card">
+
+      <div class="shape s1">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#7c9cff">
+          <polygon points="50,5 95,35 77,95 23,95 5,35" />
+        </svg>
+      </div>
+
+      <div class="shape s2">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#22d3ee">
+          <circle cx="50" cy="50" r="38" />
+        </svg>
+      </div>
+
+      <div class="header">
+        <div class="logo">
+          <svg viewBox="0 0 24 24"><path d="M5 4h9a5 5 0 010 10H9v6H5z"/></svg>
+        </div>
+
+        <div>
+          <div class="name">Riju<span class="dot"> </span>Naskar</div>
+          <div class="tag">Full Stack Developer</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="coming">
+        <h2>COMING SOON</h2>
+        <div class="progress"><div class="bar"></div></div>
+      </div>
+
+      <div class="meta">
+        <span>rijunaskar.in</span>
+        <span>High-end portfolio in development</span>
+      </div>
+
+      <footer>© 2026 Riju.Naskar</footer>
+
+    </div>
+  </div>
+
+</body>
+</html>
